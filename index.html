@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Store - Магазин предметів</title>
+    <style>
+        /* Загальні стилі */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #cd412b; /* Фірмовий колір Rust */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Контейнер магазину */
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Картка товару */
+        .item-card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-card:hover {
+            border-color: #cd412b;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(205, 65, 43, 0.2);
+        }
+
+        /* Зображення */
+        .image-box {
+            background-color: #ffffff; /* Світлий фон для контрасту з предметами */
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Текст опису */
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #bbb;
+            margin-bottom: 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Кнопка Купити */
+        .buy-btn {
+            background-color: #cd412b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+
+        .buy-btn:hover {
+            background-color: #ff4d32;
+        }
+
+        .buy-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Кошик (декор) */
+        .cart-info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #cd412b;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-info">Кошик: 0</div>
+
+    <header>
+        <h1>Rust Item Shop</h1>
+        <p>Обирай спорядження для виживання</p>
+    </header>
+
+    <div class="shop-container">
+        <!-- Предмет 1 -->
+        <div class="item-card">
+            <div class="image-box">
+                <img src="https://files.facepunch.com/rust/item/hazmatsuit_512.png" alt="Костюм">
+            </div>
+            <p class="description">Це костюм проти радіації (Hazmat)</p>
+            <button class="buy-btn" onclick="addToCart()">Купити</button>
+        </div>
+
+        <!-- Предмет 2 -->
+        <div class="item-card">
+            <div class="image-box">
+                <img src="https://files.facepunch.com/rust/item/hazmatsuit.arctic_512.png" alt="Зимовий хазік">
+            </div>
+            <p class="description">Це зимний хазік проти холоду</p>
+            <button class="buy-btn" onclick="addToCart()">Купити</button>
+        </div>
+
+        <!-- Предмет 3 -->
+        <div class="item-card">
+            <div class="image-box">
+                <img src="https://files.facepunch.com/rust/item/jackhammer_512.png" alt="Бур">
+            </div>
+            <p class="description">Це бур для збирання жиліза, сіри</p>
+            <button class="buy-btn" onclick="addToCart()">Купити</button>
+        </div>
+
+        <!-- Предмет 4 -->
+        <div class="item-card">
+            <div class="image-box">
+                <img src="https://files.facepunch.com/rust/item/shotgun.double_512.png" alt="Двушка">
+            </div>
+            <p class="description">Це двушка (Double Barrel)</p>
+            <button class="buy-btn" onclick="addToCart()">Купити</button>
+        </div>
+    </div>
+
+  
+
+</body>
+</html>
